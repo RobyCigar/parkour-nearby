@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
+import { getCsvFromAPI } from '../lib/FetchAPI'
 import styles from '../styles/Map.module.css'
 import ChangeView from './ChangeView'
 import { icon } from 'leaflet'
 import Papa from 'papaparse'
+import Search from './Search'
 import 'leaflet/dist/leaflet.css'
-
-interface IPosition {
-  latitude: number;
-  longitude: number;
-}
 
 const marker = icon({
   iconUrl: "/marker.png",
@@ -17,35 +14,29 @@ const marker = icon({
 })
 
 const Map = () => {
-  const [center, setCenter] = useState<IPosition>([-7.77085909123274, 110.37761187446267]) 
+  const [center, setCenter] = useState<Array<number>>([-7.77085909123274, 110.37761187446267])
+  const [spots, setSpots] = useState<any>(null)
   const size = 300;
   
   useEffect(() => {
+    // ask user for their current location
     navigator.geolocation.getCurrentPosition(function(position) {
       setCenter([position.coords.latitude, position.coords.longitude])
     });
-
-    // fetch csv data from data folder using papaparse
+    
     async function getData() {
-      const response = await fetch('../data/spot.csv')
-      console.log("res", response)
-      const reader = response.body.getReader()
-      const result = await reader.read() // raw array
-      const decoder = new TextDecoder('utf-8')
-      const csv = decoder.decode(result.value) // the csv text
-      const results = Papa.parse(csv, { header: true }) // object with { data, errors, meta }
-      const rows = results.data // array of objects
-      console.log(results)
+     let response = await getCsvFromAPI()
+     setSpots(response)
     }
-    getData()
 
+    getData()
   }, [])
 
-  console.log("current", center)
+  console.log('spotssssssss', spots)
 
   return (
     <>
-    <MapContainer center={center} zoom={8} scrollWheelZoom={false} style={{height: "100vh", width: "100%"}}>
+    <MapContainer center={center} zoom={10} scrollWheelZoom={false} style={{height: "100vh", width: "100%"}}>
       <ChangeView center={center} />
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -60,11 +51,22 @@ const Map = () => {
             <p>Great place to train parkour.</p>
           </Popup>
         </Marker>
-        <Marker
-          position={[-7.77185909123274, 110.37771187446267]}
-          icon={marker}
-        >
-        </Marker>
+        {
+          spots.map(val => {
+            return (
+              <Marker
+                position={[val.latitude, val.longitude]}
+                icon={marker}
+              >
+                <Popup>
+                  <h2>{val.SpotName}</h2>
+                  <p>{val.Description}</p>
+                  <a href={`http://maps.google.com/maps?q=${val.latitude},${val.longitude}`}>Open with google maps</a>
+                </Popup>
+              </Marker>
+            )
+          })
+        }
     </MapContainer>
     </>
   )

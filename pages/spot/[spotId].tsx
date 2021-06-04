@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router'
-import { getData } from '../../lib/ParseCSV'
 
 export default function SpotDetail() {
 	const router = useRouter()
@@ -13,8 +12,6 @@ export default function SpotDetail() {
 }
 
 export async function getStaticPaths() {
-	const paths = getData()
-	console.log(paths)
 	return {
 		props: {data: "shit"}
 	}

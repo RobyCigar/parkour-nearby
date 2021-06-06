@@ -2,7 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { getData } from '../../lib/ParseCSV'
 
-export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
+export default async (req: NextApiRequest, res: NextApiResponse<any>) => {
   try {
     const data = await getData();
     res.status(200).json({ data: data })

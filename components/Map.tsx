@@ -5,7 +5,6 @@ import styles from '../styles/Map.module.css'
 import ChangeView from './ChangeView'
 import { icon } from 'leaflet'
 import Papa from 'papaparse'
-import Search from './Search'
 import 'leaflet/dist/leaflet.css'
 
 const marker = icon({
@@ -14,7 +13,7 @@ const marker = icon({
 })
 
 const Map = () => {
-  const [center, setCenter] = useState<Array<number>>([-7.77085909123274, 110.37761187446267])
+  const [center, setCenter] = useState<any>([-7.77085909123274, 110.37761187446267])
   const [spots, setSpots] = useState<any>(null)
   
   useEffect(() => {
@@ -40,7 +39,7 @@ const Map = () => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
         { spots ? 
-          spots.map(val => {
+          spots.map((val: any) => {
             return (
               <Marker
                 position={[val.latitude, val.longitude]}

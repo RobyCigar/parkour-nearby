@@ -1,6 +1,6 @@
 import { useMap } from 'react-leaflet'
 
-function ChangeView({ center, zoom }: {center: number, zoom: number}) {
+function ChangeView({ center, zoom }: any) {
   const map = useMap();
   map.setView(center, zoom);
   return null;

@@ -6,13 +6,7 @@ export default function SpotDetail() {
 	return (
 		<>
 			<p>{spotId}</p>
-			<h1>FUCK</h1>
+			<h1>Hi</h1>
 		</>
 	)
-}
-
-export async function getStaticPaths() {
-	return {
-		props: {data: "shit"}
-	}
 }

@@ -1,9 +1,12 @@
-SpotName;Description;City;Country;PhotoURL;latitude;longitude
-GSP;A good spot in yogyakarta;Yogyakarta;Indonesia;https://residence.ugm.ac.id/wp-content/uploads/sites/1094/2021/01/DSC01400-copy-scaled-700x400.jpg;-77,708590912327400000;11,037761187446200000
-Pandora Building;Building from roof culture asia scene;Tokyo;Japan;;356933857340345,000000000000000000;13970114804936700,000000000000000000
-Roof Culture Asia;Place where callum did massive jump;Hong Kong;Hong Kong;;22296369159265400,000000000000000000;1141728038767860,000000000000000000
-Sogo Building;Storror climb here;Hong Kong;Hong Kong;;22280356983447300,000000000000000000;11418436979466700,000000000000000000
-Manpower Gap;;Évry-Courcouronnes, ;France;;486271108699491,000000000000000000;2431207152584010,000000000000000000
-IMAX;;London;England;;515053599191705,000000000000000000;-0.11355076407030873
-Barbican;;London;England;;5152049006680530,000000000000000000;-0.0966330216980189
-;;;;;;
+SpotName;Description;City;Country;PhotoURL;Position
+UII;Public Park;Yogyakarta;Indonesia;;-7.686319184128653, 110.40917280845841
+ISI;Local community spot;Yogyakarta;Indonesia;;-7.85276052918475, 110.35539684828349
+GSP;Local community usually train here, for more info follow @jumpalitan on instagram;Yogyakarta;Indonesia;https://residence.ugm.ac.id/wp-content/uploads/sites/1094/2021/01/DSC01400-copy-scaled-700x400.jpg;-7.77085909123274, 110.37761187446267
+Stadion Manahan;Local community usually train here;Solo;Indonesia;;-7.555749064739915, 110.80519229282378
+Taman Puring;Local community usually train here;Jakarta;Indonesia;;-6.2413332686557625, 106.7885546428945
+Roof Culture Asia (Tokyo Phase);Building from roof culture asia scene;Tokyo;Japan;;35.6933857340345, 139.70114804936796
+Roof Culture Asia (Hong Kong Phase);Place where callum did masive jump;Hong Kong;Hong Kong;;22.296369159265474, 114.1728038767868
+Sogo Building;Storror climb here;Hong Kong;Hong Kong;;22.280356983447383, 114.18436979466703
+Manpower Gap;Famous Spot;Evry-Courcouronnes, ;France;;48.6271108699491, 2.431207152584016
+IMAX;Famous Spot;London;England;;51.5053599191705, -0.11355076407030873
+Barbican;Also Famous Spot;London;England;;51.52049006680532, -0.0966330216980189

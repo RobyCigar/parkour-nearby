@@ -16,7 +16,6 @@ const marker = icon({
 const Map = () => {
   const [center, setCenter] = useState<Array<number>>([-7.77085909123274, 110.37761187446267])
   const [spots, setSpots] = useState<any>(null)
-  const size = 300;
   
   useEffect(() => {
     // ask user for their current location
@@ -32,8 +31,6 @@ const Map = () => {
     getData()
   }, [])
 
-  console.log('spotssssssss', spots)
-
   return (
     <>
     <MapContainer center={center} zoom={10} scrollWheelZoom={false} style={{height: "100vh", width: "100%"}}>
@@ -42,16 +39,7 @@ const Map = () => {
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-        <Marker
-          position={[-7.77085909123274, 110.37761187446267]}
-          icon={marker}
-        >
-          <Popup>
-            <h2>UGM GSP</h2>
-            <p>Great place to train parkour.</p>
-          </Popup>
-        </Marker>
-        {
+        { spots ? 
           spots.map(val => {
             return (
               <Marker
@@ -61,11 +49,12 @@ const Map = () => {
                 <Popup>
                   <h2>{val.SpotName}</h2>
                   <p>{val.Description}</p>
+                  <p>{val.City}, {val.Country}</p>
                   <a href={`http://maps.google.com/maps?q=${val.latitude},${val.longitude}`}>Open with google maps</a>
                 </Popup>
               </Marker>
             )
-          })
+          }) : null
         }
     </MapContainer>
     </>

@@ -42,7 +42,7 @@ const Map = () => {
         scrollWheelZoom={false}
         style={mapStyle}
       >
-        <MinimapControl/>
+        <MinimapControl position={center} zoom={2.5}/>
         <ChangeView center={center} />
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

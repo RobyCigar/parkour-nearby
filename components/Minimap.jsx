@@ -1,5 +1,6 @@
 import { useMemo, useCallback, useState } from 'react'
-import { useMap, useMapEvent, useEventHandlers, MapContainer } from 'react-leaflet'
+import { useMap, useMapEvent, MapContainer, TileLayer, Rectangle } from 'react-leaflet'
+import { useEventHandlers } from '@react-leaflet/core'
 
 // Classes used by Leaflet to position controls
 const POSITION_CLASSES = {
@@ -11,7 +12,7 @@ const POSITION_CLASSES = {
 
 const BOUNDS_STYLE = { weight: 1 }
 
-function MinimapBounds({ parentMap, zoom }: any) {
+function MinimapBounds({ parentMap, zoom }) {
   const minimap = useMap()
 
   // Clicking a point on the minimap sets the parent's map center
@@ -69,3 +70,17 @@ function MinimapControl({ position, zoom }) {
     </div>
   )
 }
+
+function ReactControlExample() {
+  return (
+    <MapContainer center={[51.505, -0.09]} zoom={6} scrollWheelZoom={false}>
+      <TileLayer
+        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />
+      <MinimapControl position="topright" />
+    </MapContainer>
+  )
+}
+
+export default MinimapControl;

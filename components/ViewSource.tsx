@@ -3,7 +3,7 @@ import styles from './ViewSource.module.css'
 // This code generate octocat on the right corner pages
 
 
-const ViewSource = ({ pathname }) => (
+const ViewSource = ({ pathname }: any) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="80"

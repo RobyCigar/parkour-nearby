@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import { getCsvFromAPI } from "../lib/FetchAPI";
 import styles from "../styles/Map.module.css";
+import MinimapControl from "./Minimap"
 import ChangeView from "./ChangeView";
 import { icon } from "leaflet";
-import Papa from "papaparse";
 import "leaflet/dist/leaflet.css";
 
 const marker = icon({
@@ -42,6 +42,7 @@ const Map = () => {
         scrollWheelZoom={false}
         style={mapStyle}
       >
+        <MinimapControl/>
         <ChangeView center={center} />
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

@@ -1,4 +1,4 @@
-interface IProps = {
+interface IProps {
 	text: string;
 	className: any;
 }

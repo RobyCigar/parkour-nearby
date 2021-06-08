@@ -16,7 +16,7 @@ export const getGoogleKey = async () => {
 export const getCsvFromAPI = async () => {
 	return await axios({
 		method: 'GET',
-		url: 'api/csv',
+		url: 'api/data',
 	}).then(res => {
 		return res.data.data
 	})

@@ -1,9 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;800;900&display=swap');
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+:root {
+  --blue: #8C30F5;
+  --black: #18191F;
+  --white: #FFFFFF;
 }
 
 a {
@@ -24,3 +32,4 @@ a {
   justify-content: center;
   align-items: center;
 }
+

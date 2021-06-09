@@ -23,7 +23,7 @@ export default function Map() {
       <section className={styles.section}>
         <div className={styles.left}>
           <h1>Find Your Nearest Parkour Spot</h1>
-          <p>Nearby Spot is web app designed to help parkour community to find nearest spot in their area. You can contribute to this project by clicking <a href="https://github.com/RobyCigar/parkour-nearby">this</a> link and then follow the guides there</p>
+          <p>Nearby Spot is web app designed to help parkour community to find nearest spot in their area. You can contribute to this project by clicking <a className={styles.href} href="https://github.com/RobyCigar/parkour-nearby">this</a> link and then follow the guides there</p>
           <Link href="/map">
             <button className={styles.btn}>Xplore Now</button>
           </Link>
